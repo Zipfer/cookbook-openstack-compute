@@ -322,6 +322,9 @@ keystone_ec2_url=<%= @identity_endpoint.scheme %>://<%= @identity_endpoint.host 
 # a list of APIs to enable by default (list value)
 enabled_apis=<%= node["openstack"]["compute"]["enabled_apis"] %>
 
+# Prevent nova from appending .novalocal suffix to the hostname in metadata service. Set empty value.
+dhcp_domain=
+
 ##### WORKERS ######
 osapi_compute_workers=<%= node["cpu"]["total"] %>
 metadata_workers=<%= node["cpu"]["total"] %>
